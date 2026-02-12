@@ -60,7 +60,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
 /* ✅ ALWAYS WORKS ON RENDER */
-if (process.env.NODE_ENV === "production") {
+
   const frontendPath = path.join(__dirname, "../../frontend/dist");
 
   app.use(express.static(frontendPath));
@@ -68,7 +68,7 @@ if (process.env.NODE_ENV === "production") {
   app.get("*", (_, res) => {
     res.sendFile(path.join(frontendPath, "index.html"));
   });
-}
+
 
 server.listen(PORT, () => {
   console.log("Server running on port: " + PORT);

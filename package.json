@@ -1,5 +1,5 @@
 {
-  "name": "chatify-app",
+  "name": "chillchat-app",
   "version": "1.0.0",
   "main": "index.js",
   "engines": {
@@ -10,7 +10,7 @@
     "start": "npm run start --prefix backend"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rakesh",
   "license": "ISC",
   "description": ""
 }

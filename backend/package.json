@@ -1,13 +1,16 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "src/server.js",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "build": "cd ../frontend && npm install && npm run build",
-    "start": "npm run build && node src/server.js"
+    "start": "node src/server.js"
   },
+  "keywords": [],
+  "type": "module",
+  "author": "Rakesh Kushwaha",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
     "@arcjet/inspect": "^1.0.0-beta.10",
     "@arcjet/node": "^1.0.0-beta.10",

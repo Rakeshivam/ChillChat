@@ -47,11 +47,10 @@ import { connectDB } from "./lib/db.js";
 import { ENV } from "./lib/env.js";
 import { app, server } from "./lib/socket.js";
 
-/* ✅ FIXED __dirname for ESM */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const PORT = ENV.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json({ limit: "5mb" }));
 app.use(cors({ origin: ENV.CLIENT_URL, credentials: true }));
@@ -60,9 +59,8 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-
-/* ✅ PRODUCTION STATIC SERVE (FIXED PATH) */
-if (ENV.NODE_ENV === "production") {
+/* ✅ ALWAYS WORKS ON RENDER */
+if (process.env.NODE_ENV === "production") {
   const frontendPath = path.join(__dirname, "../../frontend/dist");
 
   app.use(express.static(frontendPath));

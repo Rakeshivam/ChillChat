@@ -20,10 +20,6 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-// Root route test
-app.get("/", (req, res) => {
-  res.send("Backend running...");
-});
 
 // make ready for deployment
 if (ENV.NODE_ENV === "production") {
